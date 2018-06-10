@@ -2,8 +2,6 @@ package dao;
 
 import config.Database;
 import model.User;
-
-import javax.xml.transform.Result;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -18,12 +16,7 @@ public class UserDao {
     //delete
     //find by id
     //find all
-    List<User> list = new ArrayList<>();
     private Database database = new Database();
-
-    public List<User> getList() {
-        return list;
-    }
 
     public User save(User user) throws SQLException {
         //insert
@@ -106,7 +99,8 @@ public class UserDao {
 
         ResultSet result = statement.executeQuery();
         User user = null;
-        list.clear();
+        List<User> list = new ArrayList<>();
+
         while (result.next()){
             int id = result.getInt("id");
             String firstName = result.getString("first_name");

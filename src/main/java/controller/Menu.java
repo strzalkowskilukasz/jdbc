@@ -30,14 +30,13 @@ public class Menu {
         System.out.println("Choose your option: ");
         chooseOption = scanner.next();
 
-
             switch (chooseOption) {
                 case "1":
                     System.out.print("Enter new user's first name: ");
                     String firstName = scanner.next();
                     System.out.print("Enter new user's last name: ");
                     String lastName = scanner.next();
-                    System.out.print("Enter new user's last name: ");
+                    System.out.print("Enter new user's last e-mail: ");
                     String email = scanner.next();
 
                     userDao.save(new User(firstName, lastName, email));
@@ -66,6 +65,7 @@ public class Menu {
                     System.out.print("Enter ID number of searching user:  ");
                     id = scanner.nextInt();
                     userDao.findById(id);
+                    System.out.println(userDao.findById(id));
 
                     break;
                 case "5":
@@ -73,10 +73,7 @@ public class Menu {
 
                     userDao.findAll();
 
-                    Iterator<User> it = userDao.getList().iterator();
-
-                    while (it.hasNext()) {
-                        User user = it.next();
+                    for (User user : userDao.findAll()) {
                         System.out.println(user);
                     }
 
@@ -89,6 +86,5 @@ public class Menu {
                     break;
             }
         } while (!chooseOption.equalsIgnoreCase("Q"));
-
     }
 }
