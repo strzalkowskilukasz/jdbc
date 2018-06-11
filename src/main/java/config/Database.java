@@ -4,14 +4,11 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class Database {
+public class Database implements Pass {
 
     //https://github.com/strzalkowskilukasz - strony
     //jdbc:mysql://localhost:3306/java_app - bazy danych zamiast localhost 127.0.0.1:3306/java_app
 
-    private final static String URL = "jdbc:mysql://localhost:3306/java_app";
-    private final static String USER = "root";
-    private final static String PASSWORD = "root";
 
     private Connection connection;
 
@@ -30,4 +27,5 @@ public class Database {
         }
         return connection;
     }
+
 }

@@ -24,7 +24,7 @@ public class Menu {
         System.out.println("3- update user's data");
         System.out.println("4- find user by ID number");
         System.out.println("5- show all users");
-        System.out.println("6- quit application");
+        System.out.println("Q- quit application");
 
         do {
         System.out.println("Choose your option: ");
@@ -81,7 +81,7 @@ public class Menu {
                 case "q":
                 case "Q":
                     System.out.println("Thank You");
-                    System.out.println("@ Lucjan 2018");
+                    System.out.println("@Lucjan 2018");
 
                     break;
             }
